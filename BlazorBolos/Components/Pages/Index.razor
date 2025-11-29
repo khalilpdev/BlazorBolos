@@ -53,7 +53,7 @@
     {
         var parameters = new DialogParameters();
         var options = new DialogOptions() { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true };
-        var dialog = DialogService.Show<GerenciaBolosDialog>("Incluir Bolo", parameters, options);
+        var dialog = await DialogService.ShowAsync<GerenciaBolosDialog>("Incluir Bolo", parameters, options);
         var result = await dialog.Result;
         if (!result.Canceled)
         {
@@ -71,7 +71,7 @@
         var parameters = new DialogParameters();
         parameters.Add("BoloToEdit", bolo);
         var options = new DialogOptions() { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true };
-        var dialog = DialogService.Show<GerenciaBolosDialog>("Editar Bolo", parameters, options);
+        var dialog = await DialogService.ShowAsync<GerenciaBolosDialog>("Editar Bolo", parameters, options);
         var result = await dialog.Result;
         if (!result.Canceled)
         {
